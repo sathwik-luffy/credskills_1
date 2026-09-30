@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CredSkill · Wallet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+  </video>
+  <div class="veil"></div>
+  <aside class="sidebar">
+    <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+    <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+    <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+      <p>Earn credits by teaching verified skills.</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="page-top"><span>CREDITS WALLET</span>
+      <h1>Top up or cash out.</h1>
+      <p>Exchange rate is fixed: <b>2 credits = ₹1</b>. Buy credits to learn faster, or withdraw credits you've earned
+        teaching.</p>
+    </div>
+
+    <div class="wallet-balance glass">
+      <div><small>CURRENT BALANCE</small><strong data-live-credits>1,240</strong></div>
+      <div class="wallet-rate"><small>EXCHANGE RATE</small><b>2 credits = ₹1</b></div>
+    </div>
+
+    <div class="wallet-tabs">
+      <button class="wallet-tab active" data-tab="topup">Top Up</button>
+      <button class="wallet-tab" data-tab="withdraw">Withdraw</button>
+    </div>
+
+    <section class="glass form-card wallet-panel" id="panel-topup">
+      <label>AMOUNT (₹)</label>
+      <input type="number" id="topupRupees" min="1" step="1" placeholder="Example: 250">
+      <p class="wallet-preview">You'll receive <b id="topupPreview">0</b> credits</p>
+      <div class="notice">This is a mock payment — no real money moves. In production this would open Razorpay / UPI
+        checkout.</div>
+      <button class="primary-link" id="doTopup" style="border:0;cursor:pointer">Mock Pay & Add Credits</button>
+      <p class="muted" id="topupHint"></p>
+    </section>
+
+    <section class="glass form-card wallet-panel hidden" id="panel-withdraw">
+      <label>CREDITS TO WITHDRAW</label>
+      <input type="number" id="withdrawCredits" min="2" step="2" placeholder="Example: 200">
+      <p class="wallet-preview">You'll receive <b id="withdrawPreview">₹0</b></p>
+      <div class="notice">Minimum withdrawal is 2 credits (₹1). This is mock — in production this would trigger a real
+        payout to your linked bank/UPI.</div>
+      <button class="primary-link" id="doWithdraw" style="border:0;cursor:pointer">Request Withdrawal</button>
+      <p class="muted" id="withdrawHint"></p>
+    </section>
+
+    <section class="glass panel" style="margin-top:20px">
+      <div class="panel-title">
+        <h2>Transaction history</h2><span class="pill" id="txnCount">0 transactions</span>
+      </div>
+      <div id="txnList">
+        <p class="muted">No transactions yet.</p>
+      </div>
+    </section>
+
+  </main>
+  <script src="pages.js"></script>
+  <script src="wallet.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CredSkill · Roadmaps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+  </video>
+  <div class="veil"></div>
+  <aside class="sidebar">
+    <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+    <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+    <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+      <p>Earn credits by teaching verified skills.</p>
+    </div>
+  </aside>
+  <main>
+    <div class="page-top"><span>CAREER ROADMAPS</span>
+      <h1>Know exactly what's next.</h1>
+      <p>Pick any of the most in-demand skills below and CredSkill AI generates a brief, ordered roadmap — from
+        fundamentals to job-ready.</p>
+    </div>
+
+    <div id="roadmapGrid" class="roadmap-grid"></div>
+
+    <section id="roadmapDetail" class="glass roadmap-detail hidden">
+      <span class="pill" id="roadmapBadge">✦ Live Gemini roadmap</span>
+      <h2 id="roadmapTitle">Skill</h2>
+      <p class="roadmap-summary" id="roadmapSummary"></p>
+      <div class="roadmap-timeline" id="roadmapTimeline"></div>
+    </section>
+
+    <section id="roadmapLoading" class="glass roadmap-detail hidden">
+      <h2>✦ Generating roadmap…</h2>
+      <p class="muted">CredSkill AI is mapping out the path for this skill.</p>
+    </section>
+
+  </main>
+  <script src="config.js"></script>
+  <script src="ai.js"></script>
+  <script src="roadmaps.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

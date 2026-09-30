@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CredSkill AI Skill Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+    </video>
+    <div class="veil"></div>
+    <aside class="sidebar">
+        <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+        <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+        <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+            <p>Earn credits by teaching verified skills.</p>
+        </div>
+    </aside>
+    <main>
+        <header>
+            <div><label>AI-POWERED SKILL EXCHANGE</label>
+                <h1>Find the right skill.<br><em>Find the right person.</em></h1>
+                <p>Tell CredSkill what you're struggling with. Our AI analyzes the problem, identifies the exact
+                    sub-skill and recommends the best-fit teacher.</p>
+            </div><span class="online">● AI matching online</span>
+        </header>
+        <section class="glass search">
+            <div><label>1 · SELECT A SKILL</label><select id="skill">
+                    <option>Python</option>
+                    <option>JavaScript</option>
+                    <option>React</option>
+                    <option>UI/UX Design</option>
+                    <option>Data Science</option>
+                    <option>Machine Learning</option>
+                    <option>Java</option>
+                </select></div>
+            <div class="problem"><label>2 · DESCRIBE YOUR PROBLEM</label><textarea id="problem"
+                    placeholder="Example: I know Python basics, but I don't understand inheritance, parent/child classes and super()."></textarea>
+            </div>
+            <div class="actions"><button id="analyze">✦ Analyze My Problem</button><button id="example">Try
+                    Example</button></div>
+        </section>
+        <section id="result" class="hidden">
+            <div class="resultHead">
+                <div><label>CREDSKILL AI · ANALYSIS</label>
+                    <h2>We found what you actually need.</h2>
+                </div><span class="pill" id="aiSourceBadge">✦ Live Gemini analysis</span>
+            </div>
+            <div class="analysis">
+                <article class="glass">
+                    <div class="aiIcon">✦</div>
+                    <h3 id="detected"></h3>
+                    <p class="muted">Detected concept</p>
+                    <div id="tags" class="tags"></div>
+                    <div id="path" class="path"></div>
+                </article>
+                <article class="glass score">
+                    <p class="muted">Recommended learner level</p><strong id="level"></strong>
+                    <div class="bar"><i id="bar"></i></div>
+                    <p>Topic match <b id="score"></b></p>
+                    <p>Teacher fit <b>94%</b></p>
+                </article>
+            </div>
+            <div class="recommend"><label>AI MATCHING</label>
+                <div class="recommendTitle">
+                    <h2>Best teachers for your exact problem</h2><span class="pill">3 matched</span>
+                </div>
+                <div id="teachers" class="teachers"></div>
+            </div>
+        </section>
+        <section class="popular"><label>EXPLORE</label>
+            <h2>Popular skills</h2>
+            <div class="skills"><button>Python</button><button>React</button><button>UI/UX Design</button><button>Data
+                    Science</button><button>Machine Learning</button><button>JavaScript</button></div>
+        </section>
+    </main>
+    <script src="config.js"></script>
+    <script src="ai.js"></script>
+    <script src="pages.js"></script>
+    <script src="app.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

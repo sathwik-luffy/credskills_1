@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CredSkill · My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+        <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+    </video>
+    <div class="veil"></div>
+    <aside class="sidebar">
+        <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+        <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+        <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+            <p>Earn credits by teaching verified skills.</p>
+        </div>
+    </aside>
+    <main>
+        <div class="profile-hero glass">
+            <div class="profile-avatar">S</div>
+            <div><span>SKILL EXCHANGER</span>
+                <h1>Sathwik</h1>
+                <p>Building, learning and teaching through CredSkill.</p>
+                <div class="tags"><span>Python</span><span>Web Development</span><span>AI</span><span>UI/UX</span></div>
+            </div><button class="secondary-link">Edit Profile</button>
+        </div>
+        <div class="profile-grid">
+            <section class="glass panel">
+                <div class="panel-title">
+                    <h2>CredSkill reputation</h2>
+                </div>
+                <div class="big-rating" data-live-rating-big>— <small>unrated</small></div>
+                <p class="muted" data-live-rating-count>No session feedback yet</p>
+                <div class="rep"><span>Teaching</span><i style="width:94%"></i><b>94</b></div>
+                <div class="rep"><span>Reliability</span><i style="width:98%"></i><b>98</b></div>
+                <div class="rep"><span>Communication</span><i style="width:91%"></i><b>91</b></div>
+            </section>
+            <section class="glass panel">
+                <div class="panel-title">
+                    <h2>Your skills</h2><span class="pill">8 skills</span>
+                </div>
+                <div class="skill-row"><b>Python</b><span>Teacher · 94%</span></div>
+                <div class="skill-row"><b>JavaScript</b><span>Learner · 78%</span></div>
+                <div class="skill-row"><b>React</b><span>Learner · 71%</span></div>
+                <div class="skill-row"><b>UI/UX</b><span>Teacher · 89%</span></div>
+            </section>
+        </div>
+    </main>
+    <script src="pages.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CredSkill · Teach a Skill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+        <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+    </video>
+    <div class="veil"></div>
+    <aside class="sidebar">
+        <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+        <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+        <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+            <p>Earn credits by teaching verified skills.</p>
+        </div>
+    </aside>
+    <main>
+        <div class="page-top"><span>TEACHER MODE</span>
+            <h1>Turn your skills into credits.</h1>
+            <p>Choose what you know, prove your expertise with a sample assessment, and start helping learners.</p>
+        </div>
+        <section class="glass form-card"><label>STEP 1 · CHOOSE YOUR SKILL</label>
+            <div class="choice-grid"><button class="choice active">Python</button><button
+                    class="choice">JavaScript</button><button class="choice">React</button><button class="choice">UI/UX
+                    Design</button><button class="choice">Data Science</button><button class="choice">Machine
+                    Learning</button></div>
+            <label>STEP 2 · YOUR TEACHING SPECIALTY</label><input id="specialty"
+                placeholder="Example: Python inheritance, OOP and backend fundamentals"><label>STEP 3 ·
+                EXPERIENCE</label><textarea id="experience"
+                placeholder="Tell learners what you can teach and your experience with this skill..."></textarea>
+            <div class="notice">✦ <b>Teacher verification:</b> You'll complete a short 10-question AI-generated skill
+                assessment before your teacher score is calculated.</div><a class="primary-link" id="toAssessment"
+                href="assessment.html">Continue to Skill Assessment →</a>
+        </section>
+    </main>
+    <script src="config.js"></script>
+    <script src="ai.js"></script>
+    <script src="pages.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

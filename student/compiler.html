@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CredSkill · Compiler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+  </video>
+  <div class="veil"></div>
+  <aside class="sidebar">
+    <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+    <nav>
+<a class="active" href="dashboard.html">◈ <span>Student Dashboard</span></a>
+<a href="explore.html">⌕ <span>Find a Professional</span></a>
+<a href="roadmaps.html">➜ <span>My Learning Roadmaps</span></a>
+<a href="session.html">◉ <span>My Learning Sessions</span></a>
+<a href="compiler.html">⌨ <span>Practice Compiler</span></a>
+<a href="assessment.html">✓ <span>My Skill Assessment</span></a>
+<a href="wallet.html">₹ <span>Credits Wallet</span></a>
+<a href="profile.html">◎ <span>Student Profile</span></a>
+</nav>
+    <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+      <p>Spend credits to learn from professionals.</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="page-top"><span>LIVE COMPILER</span>
+      <h1>Write it. Run it.</h1>
+      <p>A real, working compiler — useful during sessions to test code live with a teacher or learner. Runs on a free
+        public execution engine (Piston), no login needed.</p>
+    </div>
+
+    <section class="glass compiler-toolbar">
+      <div><label>LANGUAGE</label><select id="langSelect">
+          <option>Loading…</option>
+        </select></div>
+      <div class="compiler-actions">
+        <button class="secondary-link" id="loadTemplate">Insert starter code</button>
+        <button class="secondary-link" id="clearCode">Clear</button>
+        <button class="primary-link" id="runCode" style="margin-top:0;border:0;cursor:pointer">▶ Run Code</button>
+      </div>
+    </section>
+
+    <div class="compiler-grid">
+      <section class="glass compiler-pane">
+        <label>CODE</label>
+        <textarea id="codeInput" class="code-area" spellcheck="false"
+          placeholder="// Write your code here..."></textarea>
+        <label style="margin-top:14px">STDIN (optional input for your program)</label>
+        <textarea id="stdinInput" class="code-area small" spellcheck="false"
+          placeholder="Any input your program reads via stdin..."></textarea>
+      </section>
+
+      <section class="glass compiler-pane">
+        <label>OUTPUT</label>
+        <div id="outputBox" class="output-box"><span class="muted">Run your code to see output here.</span></div>
+      </section>
+    </div>
+
+  </main>
+  <script src="pages.js"></script>
+  <script src="compiler.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>

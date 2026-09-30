@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CredSkill · Sessions</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .call-shell{margin-top:18px;padding:18px}.call-top{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid #ffffff12;padding-bottom:15px}.call-top strong{font-size:15px}.call-top small{display:block;color:#ffffff55;font-size:9px;margin-top:5px}.call-live{color:#4ade80;font-size:9px;letter-spacing:.12em}.call-id{font-size:9px;color:#ffffff50}.call-id b{color:#67e8f9;word-break:break-all}.call-layout{display:grid;grid-template-columns:1fr 280px;gap:14px;margin-top:15px}.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.video-tile{position:relative;min-height:310px;background:#030507;border:1px solid #ffffff12;border-radius:16px;overflow:hidden}.video-tile video{width:100%;height:100%;min-height:310px;object-fit:cover}.video-tile>span{position:absolute;left:10px;bottom:10px;padding:6px 9px;border-radius:8px;background:#000b;font-size:9px;color:#fff}.call-controls{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:12px 0}.call-controls button,.call-connect button,.ai-assistant button{margin-top:0}.danger-link{border:1px solid #ff637544;background:#ff63751a;color:#fff;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer}.call-connect{display:none}.ai-assistant{background:#0005;border:1px solid #ffffff12;border-radius:17px;padding:16px;min-height:100%}.ai-title{display:flex;gap:7px;align-items:center;font-size:11px}.ai-title:first-letter{color:#67e8f9}.ai-title span{margin-left:auto;color:#4ade80;font-size:8px}.ai-note{font-size:9px;color:#ffffff55;line-height:1.5;margin:13px 0}.transcript-status{font-size:9px;color:#ffffff45;margin:10px 0}.transcript-box{height:205px;overflow:auto;border:1px solid #ffffff0d;border-radius:11px;padding:8px;background:#ffffff04;margin-bottom:9px}.note-line{padding:7px 8px;background:#ffffff07;border-radius:8px;margin-bottom:6px;font-size:9px;color:#ffffffaa;line-height:1.4}.empty-note{color:#ffffff35;text-align:center;padding:45px 8px;font-size:9px}.hidden{display:none!important}@media(max-width:900px){.call-layout{grid-template-columns:1fr}.call-id{display:none}}@media(max-width:600px){.video-grid{grid-template-columns:1fr}.video-tile,.video-tile video{min-height:240px}.call-connect{flex-direction:column}.call-top{align-items:flex-start}}
+  </style>
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+    <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+  </video>
+  <div class="veil"></div>
+  <aside class="sidebar">
+    <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+    <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+    <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+      <p>Earn credits by teaching verified skills.</p>
+    </div>
+  </aside>
+  <main>
+    <div class="page-top"><span>PROFESSIONAL TEACHING SESSIONS</span>
+      <h1>Teach your learner. Live.</h1>
+      <p>Once you and the matched student approve the exchange, CredSkill opens your teaching meeting. You join as the professional and the learner joins as your student.</p>
+    </div>
+    <div class="session-banner glass">
+      <div class="live-icon">◉</div>
+      <div>
+        <h2>AI-assisted CredSkill video session</h2>
+        <p>Your matched session opens directly. No meeting ID or extra code is required.</p>
+      </div><span class="pill">Ready</span>
+    </div>
+    <section class="glass panel">
+      <div class="panel-title">
+        <h2>Upcoming sessions</h2><span class="pill">2 scheduled</span>
+      </div>
+      <div class="meeting">
+        <div><small>TODAY · 7:00 PM</small>
+          <h3>Python Inheritance · 1:1</h3>
+          <p>Professional: You · Student: Riya Sharma</p>
+        </div><button class="primary-link" id="joinMeetingBtn">Join Meeting →</button>
+      </div>
+      <div class="meeting">
+        <div><small>FRIDAY · 6:30 PM</small>
+          <h3>Design Systems</h3>
+          <p>Teacher: Mathies Christensen · Learner: You</p>
+        </div><button class="secondary-link">View details</button>
+      </div>
+    </section>
+
+    <section class="call-shell glass hidden" id="callShell">
+      <div class="call-top">
+        <div><span class="call-live">● LIVE</span><strong> CredSkill Live Exchange</strong><small id="callStatus">Preparing camera and microphone…</small></div>
+        <div class="call-id"><b id="connectionMode">Auto-connecting…</b></div>
+      </div>
+      <div class="call-layout">
+        <div class="call-main">
+          <div class="video-grid">
+            <div class="video-tile"><video id="localVideo" autoplay muted playsinline></video><span>You</span></div>
+            <div class="video-tile"><video id="remoteVideo" autoplay playsinline></video><span id="remoteLabel">Student</span></div>
+          </div>
+          <div class="call-controls">
+            <button class="secondary-link" id="muteBtn">🎙 Mute</button>
+            <button class="secondary-link" id="cameraBtn">▣ Camera Off</button>
+            <button class="secondary-link" id="shareBtn">🖥 Share Screen</button>
+            <button class="danger-link" id="endCallBtn">End Call</button>
+          </div>
+
+        </div>
+        <aside class="ai-assistant">
+          <div class="ai-title">✦ <b>CredSkill AI Assistant</b><span>LIVE</span></div>
+          <div class="ai-note">AI can help capture your own speech, create notes and prepare follow-up resources after the session.</div>
+          <button class="secondary-link" id="transcriptBtn">Start Live Notes</button>
+          <div class="transcript-status" id="transcriptStatus">Notes are off</div>
+          <div class="transcript-box" id="transcriptBox"><div class="empty-note">Start Live Notes and begin speaking.</div></div>
+          <button class="secondary-link" id="copyNotesBtn">Copy Notes</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="glass panel">
+      <div class="panel-title">
+        <h2>AI session assistant</h2>
+      </div>
+      <div class="ai-row">✦ <span>Summarize the lesson automatically</span><b>ON</b></div>
+      <div class="ai-row">◉ <span>Generate follow-up resources</span><b>ON</b></div>
+      <div class="ai-row">✓ <span>Track agreed learning goals</span><b>ON</b></div>
+    </section>
+
+    <section class="glass panel" id="feedbackForm">
+      <div class="panel-title">
+        <h2>Review your completed teaching session</h2><span class="pill">Updates live teacher rating</span>
+      </div>
+      <p class="muted">Learner feedback updates your teaching reputation — not the initial assessment
+        score.</p>
+      <label style="display:block;margin:16px 0 8px">WHICH SESSION</label>
+      <select id="feedbackSkill">
+        <option>Python Inheritance · Arjun Kumar</option>
+        <option>Design Systems · Mathies Christensen</option>
+      </select>
+      <label style="display:block;margin:20px 0 8px">HOW WAS IT?</label>
+      <div id="starPicker" style="display:flex;gap:8px">
+        <button data-star="1" class="secondary-link">★</button>
+        <button data-star="2" class="secondary-link">★★</button>
+        <button data-star="3" class="secondary-link">★★★</button>
+        <button data-star="4" class="secondary-link">★★★★</button>
+        <button data-star="5" class="secondary-link">★★★★★</button>
+      </div>
+      <div style="margin-top:20px"><button class="primary-link" id="submitFeedback" style="margin-top:0">Submit
+          Feedback</button> <small class="muted" id="feedbackHint"></small></div>
+    </section>
+
+    <section class="glass panel hidden" id="feedbackDone">
+      <div class="panel-title">
+        <h2>Thanks — feedback recorded ✦</h2>
+      </div>
+      <p class="muted">Your rating has been added to the teacher's live score. Check the Dashboard or Profile page to
+        see it update.</p>
+    </section>
+
+  </main>
+  <style>
+    #starPicker button {
+      cursor: pointer;
+      font-size: 16px;
+      color: #ffffff55
+    }
+
+    #starPicker button.active {
+      color: #67e8f9;
+      border-color: #67e8f966
+    }
+  </style>
+  <script src="pages.js"></script>
+  <script src="feedback.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+
+<script>
+let localStream=null,screenStream=null,recognition=null,notesOn=false;const el=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);let savedUser=null;try{savedUser=JSON.parse(localStorage.getItem('credskillUser')||'null')}catch(e){}
+const role=(savedUser?.role||params.get('role')||'learner').toLowerCase()==='teacher'?'teacher':'learner';const displayName=savedUser?.name||(role==='teacher'?'Teacher':'Learner');
+el('connectionMode').textContent='Offline session workspace';el('callStatus').textContent='Ready — this no-API build uses your camera locally.';
+el('joinMeetingBtn').onclick=()=>{const session=new URLSearchParams(location.search).get('session')||'python-inheritance-arjun';location.href='meeting.html?session='+encodeURIComponent(session)+'&role='+encodeURIComponent(role)};
+el('muteBtn').onclick=()=>{const t=localStream?.getAudioTracks()[0];if(!t)return;t.enabled=!t.enabled;el('muteBtn').textContent=t.enabled?'🎙 Mute':'🔇 Unmute'};
+el('cameraBtn').onclick=()=>{const t=localStream?.getVideoTracks()[0];if(!t)return;t.enabled=!t.enabled;el('cameraBtn').textContent=t.enabled?'▣ Camera Off':'▣ Camera On'};
+el('shareBtn').onclick=async()=>{if(screenStream){screenStream.getTracks().forEach(t=>t.stop());screenStream=null;if(localStream)el('localVideo').srcObject=localStream;el('shareBtn').textContent='🖥 Share Screen';return}try{screenStream=await navigator.mediaDevices.getDisplayMedia({video:true});el('localVideo').srcObject=screenStream;el('shareBtn').textContent='⏹ Stop Sharing';screenStream.getVideoTracks()[0].onended=()=>{screenStream=null;if(localStream)el('localVideo').srcObject=localStream;el('shareBtn').textContent='🖥 Share Screen'}}catch(e){}};
+el('endCallBtn').onclick=()=>{if(screenStream)screenStream.getTracks().forEach(t=>t.stop());if(localStream)localStream.getTracks().forEach(t=>t.stop());localStream=null;screenStream=null;el('localVideo').srcObject=null;el('callStatus').textContent='Session ended.';el('connectionMode').textContent='Ended'};
+function addNote(text){if(!text.trim())return;const empty=el('transcriptBox').querySelector('.empty-note');if(empty)empty.remove();const n=document.createElement('div');n.className='note-line';n.textContent=displayName+': '+text.trim();el('transcriptBox').appendChild(n);el('transcriptBox').scrollTop=el('transcriptBox').scrollHeight}
+function startNotes(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Live notes require Chrome or Edge.');return}recognition=new SR();recognition.continuous=true;recognition.interimResults=false;recognition.lang='en-US';recognition.onstart=()=>{notesOn=true;el('transcriptBtn').textContent='Stop Live Notes';el('transcriptStatus').textContent='Listening…'};recognition.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)addNote(e.results[i][0].transcript)};recognition.onerror=()=>el('transcriptStatus').textContent='Transcription error';recognition.onend=()=>{if(notesOn)try{recognition.start()}catch(e){}};recognition.start()}
+function stopNotes(){notesOn=false;if(recognition)try{recognition.stop()}catch(e){}el('transcriptBtn').textContent='Start Live Notes';el('transcriptStatus').textContent='Notes are off'}
+el('transcriptBtn').onclick=()=>notesOn?stopNotes():startNotes();el('copyNotesBtn').onclick=async()=>{const text=[...document.querySelectorAll('.note-line')].map(x=>x.textContent).join('\n');if(!text)return alert('No notes yet.');try{await navigator.clipboard.writeText(text);el('copyNotesBtn').textContent='Copied!';setTimeout(()=>el('copyNotesBtn').textContent='Copy Notes',1000)}catch(e){}};
+</script>
+</body>
+
+</html>

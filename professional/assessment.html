@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CredSkill · Skill Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body><video class="bg-video" autoplay loop muted playsinline>
+        <source src="https://framerusercontent.com/assets/DIxKdkWMeotCUZDGcvrTFMPqq8c.mp4">
+    </video>
+    <div class="veil"></div>
+    <aside class="sidebar">
+        <div class="brand"><b>C</b><strong>CredSkill</strong></div>
+        <nav>
+<a class="active" href="dashboard.html">◈ <span>Professional Dashboard</span></a>
+<a href="teacher.html">✦ <span>Teach a Skill</span></a>
+<a href="assessment.html">✓ <span>Technical Assessment</span></a>
+<a href="session.html">◉ <span>Teaching Sessions</span></a>
+<a href="wallet.html">₹ <span>Credits & Earnings</span></a>
+<a href="profile.html">◎ <span>Professional Profile</span></a>
+</nav>
+        <div class="credits"><small>CREDITS</small><strong data-live-credits>0</strong>
+            <p>Earn credits by teaching verified skills.</p>
+        </div>
+    </aside>
+    <main>
+        <div class="page-top"><span id="assessTitle">TEACHER VERIFICATION</span>
+            <h1>Show what you know.</h1>
+            <p>This 10-question AI-generated assessment creates your initial teacher skill score. It's the starting
+                point — your real, live rating is built from learner feedback after you teach sessions.</p>
+        </div>
+
+        <div id="quizLoading" class="glass quiz">
+            <div class="quiz-head"><span>PREPARING ASSESSMENT</span><strong id="loadingSkillLabel">Skill</strong></div>
+            <h2>✦ Generating your 10 questions…</h2>
+            <p class="muted">CredSkill AI is building a fresh assessment for this skill.</p>
+        </div>
+
+        <div id="quizError" class="glass quiz hidden">
+            <div class="quiz-head"><span>COULDN'T GENERATE LIVE QUESTIONS</span></div>
+            <h2>Showing a demo assessment instead</h2>
+            <p class="muted">Add your Gemini API key in <code>js/config.js</code> to generate fresh AI questions every
+                time.</p>
+        </div>
+
+        <div id="quizContainer"></div>
+
+        <div class="glass result-card hidden" id="quizResult">
+            <h2>Assessment complete ✦</h2><strong id="finalScore">— / 100</strong>
+            <p id="resultText">Your initial teacher score is calculated. You're now eligible for matching in this skill.
+            </p>
+            <p class="muted">This score reflects your subject knowledge only. Your <b>teacher rating</b> (shown on your
+                profile) stays unrated until learners give feedback after real sessions.</p><a class="primary-link"
+                href="teacher.html">Back to Teacher Mode</a>
+        </div>
+
+    </main>
+    <script src="config.js"></script>
+    <script src="ai.js"></script>
+    <script src="assessment.js"></script>
+<button class="chat-launcher" id="chatLauncher" aria-label="Open CredSkill AI">✦</button>
+<div class="chat-panel" id="chatPanel"><div class="chat-head"><i class="dot"></i><div><strong>CredSkill AI</strong><small>Ask about skills, sessions or credits</small></div><button class="chat-close" id="chatClose">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg ai">Hi! I'm CredSkill AI. Tell me what you're trying to learn or what you're stuck on.</div></div><form class="chat-input" id="chatForm"><input id="chatInput" placeholder="Ask CredSkill AI…" autocomplete="off"><button>↑</button></form></div>
+<script src="chat.js"></script>
+</body>
+
+</html>
